@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>begin</name>
+    <events>
+        <event-group description="" sid="160142734114345" title="Begin - System | Start Layout">
+            <sub-events>
+                <event-block sid="315551030658493">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="919883000970630" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="511491357518065" type="Audio">
+                            <param id="0" name="Audio file">theme2</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;initial_music&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="176711199119698" title="Begin - Touch">
+            <sub-events>
+                <event-block sid="324948758588610">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="489231534700252" type="Touch">
+                            <param id="0" name="Object">capa</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="559008216435293" type="System">
+                            <param id="0" name="Layout">menu</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="951889567303826">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="358712605878941" type="Touch">
+                            <param id="0" name="Object">capa</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="208084920098472" type="Audio">
+                            <param id="0" name="Audio file">buttonclick</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

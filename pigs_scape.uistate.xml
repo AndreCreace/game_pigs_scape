@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="2">level_1</layout>
+        <layout order="0">begin</layout>
+        <event-sheet order="4">menu</event-sheet>
+        <event-sheet order="1">begin</event-sheet>
+        <event-sheet active="1" order="3">engine</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="0" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="0" path="event-folder/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="0" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/level/" />
+        <folder expanded="1" path="animation-folder/moving_pig/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/porco/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/solido/" />
+        <folder expanded="1" path="animation-folder/p/" />
+        <folder expanded="1" path="animation-folder/p2/" />
+        <folder expanded="1" path="animation-folder/p3/" />
+        <folder expanded="1" path="animation-folder/p4/" />
+        <folder expanded="1" path="animation-folder/p5/" />
+        <folder expanded="1" path="animation-folder/serra/" />
+        <folder expanded="1" path="animation-folder/tronco/" />
+        <folder expanded="1" path="animation-folder/Sprite3/" />
+        <folder expanded="1" path="animation-folder/bacon/" />
+        <folder expanded="1" path="animation-folder/btn_retry/" />
+        <folder expanded="1" path="animation-folder/area_click/" />
+        <folder expanded="1" path="animation-folder/porco2/" />
+        <folder expanded="1" path="animation-folder/instrucoes/" />
+        <folder expanded="1" path="animation-folder/black_screen/" />
+        <folder expanded="1" path="animation-folder/completo/" />
+        <folder expanded="1" path="animation-folder/gameover/" />
+        <folder expanded="1" path="animation-folder/passou/" />
+        <folder expanded="1" path="animation-folder/arvore/" />
+        <folder expanded="1" path="animation-folder/level2/" />
+        <folder expanded="1" path="animation-folder/level3/" />
+        <folder expanded="1" path="animation-folder/ponta_esquerda/" />
+        <folder expanded="1" path="animation-folder/flip/" />
+        <folder expanded="1" path="animation-folder/level4/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
+        <folder expanded="1" path="animation-folder/serra2/" />
+        <folder expanded="1" path="animation-folder/btn_menu/" />
+        <folder expanded="1" path="animation-folder/level_select/" />
+        <folder expanded="1" path="animation-folder/level5/" />
+        <folder expanded="1" path="animation-folder/select_level/" />
+        <folder expanded="1" path="animation-folder/select_level2/" />
+        <folder expanded="1" path="animation-folder/select_level3/" />
+        <folder expanded="1" path="animation-folder/reset_level/" />
+        <folder expanded="1" path="animation-folder/Sprite5/" />
+        <folder expanded="1" path="animation-folder/menuinicial/" />
+        <folder expanded="1" path="animation-folder/capa/" />
+    </folders-expanded>
+</c2uistate>

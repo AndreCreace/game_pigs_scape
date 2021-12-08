@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>engine</name>
+    <events>
+        <variable constant="0" name="porco_quantidade" sid="971226401078024" static="0" type="number">0</variable>
+        <variable constant="0" name="porco_passou" sid="887660326214241" static="0" type="number">0</variable>
+        <event-group description="This group was created to agroup the system variables and validations." sid="819677882868049" title="System | Start Layout">
+            <sub-events>
+                <event-block sid="613612254856429">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="931061807230742" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="304832945266726" type="System">
+                            <param id="0" name="Variable">porco_quantidade</param>
+                            <param id="1" name="Value">porco.Count</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="454275302833749" type="System">
+                            <param id="0" name="Variable">porco_passou</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="6" name="Stop" sid="408579062606743" type="Audio">
+                            <param id="0" name="Tag">&quot;initial_music&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="217206311501299" type="Audio">
+                            <param id="0" name="Audio file">theme</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="329159643442970">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="810660664323593" type="System">
+                            <param id="0" name="Variable">porco_quantidade</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">porco_passou</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="842603742380950" type="completo">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="422803722904607">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="989274983145319" type="Touch">
+                            <param id="0" name="Object">gameover</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="348607170885396" type="gameover" />
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="295884659173279" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="Group created to agroup buttons by instrucions" sid="276450274738184" title="HUD">
+            <sub-events>
+                <event-block sid="977849676190774">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="887897036167880" type="Touch">
+                            <param id="0" name="Object">btn_retry</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="468565686617795" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="122800894331010">
+                    <conditions>
+                        <condition id="14" name="On tap" sid="405662410253734" type="Touch" />
+                        <condition id="4" inverted="1" name="Is touching object" sid="655434478371884" type="Touch">
+                            <param id="0" name="Object">btn_retry</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="742956773068533" type="porco">
+                            <param id="0" name="Instance variable">walk</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="435939734068650" type="porco">
+                            <param id="0" name="Instance variable">walk</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="284657847706555" title="Porco">
+            <sub-events>
+                <event-block sid="388625604918289">
+                    <conditions>
+                        <condition behavior="Platform" id="7" name="On stopped" sid="408344455350441" type="porco" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="767161633807420" type="porco">
+                            <param id="0" name="Animation">&quot;parado&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="909519154023456">
+                    <conditions>
+                        <condition behavior="Platform" id="8" name="On moved" sid="411476154265326" type="porco" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="561091978414953" type="porco">
+                            <param id="0" name="Animation">&quot;andando&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="676920192634231">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="367021680413432" type="porco">
+                            <param id="0" name="Object">serra</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="926195455612580" type="porco" />
+                        <action id="0" name="Play" sid="488510896713087" type="Audio">
+                            <param id="0" name="Audio file">blood_impact1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="461284711169705" type="serra">
+                            <param id="0" name="Object">sangue</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="769463372782569" type="sangue">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="988381261860711" type="serra">
+                            <param id="0" name="Object">p2</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="325818417564789" type="serra">
+                            <param id="0" name="Object">p3</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="414681687447733" type="serra">
+                            <param id="0" name="Object">p4</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="786701553747807" type="serra">
+                            <param id="0" name="Object">p5</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="368542018348481" type="serra">
+                            <param id="0" name="Object">bacon</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="248653260980761" type="serra">
+                            <param id="0" name="Animation">&quot;sangue&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Physics" id="5" name="Apply impulse at angle" sid="164567051038418" type="p2">
+                            <param id="0" name="Impulse">random(1.5,2.5)</param>
+                            <param id="1" name="Angle">random(250,290)</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Physics" id="5" name="Apply impulse at angle" sid="181857600519309" type="p3">
+                            <param id="0" name="Impulse">random(0.5,1.5)</param>
+                            <param id="1" name="Angle">random(250,290)</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Physics" id="5" name="Apply impulse at angle" sid="767163980248344" type="p4">
+                            <param id="0" name="Impulse">random(0.5,1)</param>
+                            <param id="1" name="Angle">random(250,290)</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Physics" id="5" name="Apply impulse at angle" sid="535695833059786" type="p5">
+                            <param id="0" name="Impulse">random(1.5,2.5)</param>
+                            <param id="1" name="Angle">random(250,290)</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Physics" id="5" name="Apply impulse at angle" sid="283214471491596" type="bacon">
+                            <param id="0" name="Impulse">random(1.5,2.5)</param>
+                            <param id="1" name="Angle">random(250,290)</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="346231379775397" type="sangue" />
+                        <action id="-16" name="Wait" sid="760357213730043" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="419339218451806" type="gameover">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="737975842149160">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="225808968496105" type="Touch">
+                            <param id="0" name="Object">area_click</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="687059845044267" type="porco">
+                            <param id="0" name="Unique ID">area_click.id</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="313449435608873" type="porco">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="303538107065766">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="417003643860129" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="957256166214818">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="435962349625378" type="System">
+                                    <param id="0" name="Object">porco</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="224031711389302" type="System">
+                                    <param id="0" name="Object to create">area_click</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">porco.X</param>
+                                    <param id="3" name="Y">porco.y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="853856017066083" type="area_click">
+                                    <param id="0" name="Pin to">porco</param>
+                                    <param id="1" name="Mode">0</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="481461509101236" type="area_click">
+                                    <param id="0" name="Instance variable">id</param>
+                                    <param id="1" name="Value">porco.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="408628586439731">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="943385633599472" type="porco">
+                            <param id="0" name="Instance variable">walk</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="666346648785224" type="porco">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="634780144482272" type="porco">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="204387099973839">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="530330563675935" type="porco">
+                            <param id="0" name="Instance variable">walk</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="283030110553901" type="porco">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="320137405165781" type="porco">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="768481823531152">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="851734676452411" type="porco">
+                            <param id="0" name="Object">passou</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="554575510975570" type="System">
+                            <param id="0" name="Variable">porco_passou</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="520852134583587" type="porco" />
+                    </actions>
+                </event-block>
+                <event-block sid="269080003810977">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="834266429890484" type="porco">
+                            <param id="0" name="Object">ponta_esquerda</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="277655929337106" type="porco">
+                            <param id="0" name="X">porco.X - int(15)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="506203008128248">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="438982491090241" type="porco">
+                            <param id="0" name="Object">flip</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="843538090195073" type="porco">
+                            <param id="0" name="Instance variable">walk</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="0" name="Play" sid="794946087076688" type="Audio">
+                            <param id="0" name="Audio file">oink</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                        <action behavior="Platform" id="1" name="Set max speed" sid="159710870959279" type="porco">
+                            <param id="0" name="Max Speed">170</param>
+                        </action>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="841546561899206" type="porco">
+                            <param id="0" name="Jump strength">450</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="773663806529946" type="porco">
+                            <param id="0" name="Speed">20</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="592064017591974" title="Touch">
+            <sub-events>
+                <event-block sid="376800026439060">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="295718972771946" type="Touch">
+                            <param id="0" name="Object">completo</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="704131804970081" type="completo" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="415240943107823" type="Audio">
+                            <param id="0" name="Audio file">buttonclick</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="965101210192257">
+                            <conditions>
+                                <condition id="7" name="Compare key value (as number)" sid="991433595001556" type="WebStorage">
+                                    <param id="0" name="Key">&quot;currentLevel&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">int(completo.level)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set local value" sid="471197296094765" type="WebStorage">
+                                    <param id="0" name="Key">&quot;currentLevel&quot;</param>
+                                    <param id="1" name="Value">int(WebStorage.LocalValue(&quot;currentLevel&quot;)) + int(1)</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="152289555199799" type="System">
+                                    <param id="0" name="Layout">menu</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="660097907292759">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="932395764469514" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="585196214302438" type="System">
+                                    <param id="0" name="Layout">menu</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="280593481399383">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="352210509814629" type="Touch">
+                            <param id="0" name="Object">btn_menu</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="714663379721713" type="System">
+                            <param id="0" name="Layout">menu</param>
+                        </action>
+                        <action id="0" name="Play" sid="108065468283922" type="Audio">
+                            <param id="0" name="Audio file">buttonclick</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="719422436007198">
+                    <conditions>
+                        <condition id="14" name="On tap" sid="773846434365183" type="Touch" />
+                        <condition id="-9" name="Layer is visible" sid="995082985292645" type="System">
+                            <param id="0" name="Layer">&quot;instrucoes&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="952757219182836" type="System">
+                            <param id="0" name="Layer">&quot;instrucoes&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
